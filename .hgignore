@@ -1,0 +1,7 @@
+\.pyc$
+\.DS_Store$
+
+devnotes.md
+resources/
+.gitignore
+.git/

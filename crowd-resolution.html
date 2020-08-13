@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/simple-grid.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/consentifier-api.js"></script>
+    <script src="js/popup.js"></script>
+
+  </head>
+
+  <body>
+    <main>
+      <div class="container consent-profile">
+        <h2><span class=""></span>Crowd resolution</h2>
+
+        Current Page: <h id="service"></h>
+        <br><br>
+        Terms: <h id="agreed"></h>
+        <br><br>
+
+        <p>How the crowd decided:</p>
+      </div>
+
+      <div class="crowd" style="position:relative">
+
+        <a class="gradient">
+          <p id = "likes" style="display:inline; color:white"></p> people agreed to these terms
+        </a>
+
+        <a class="gradient">
+          <p id = "dislikes" style="display:inline; color:white"></p> people rejected these terms
+        </a>
+
+      </div>
+
+      <br><br>
+      <div style="text-align: center;">
+        Click <a href="#" id="analytics">here</a> to see the analysis of users who visited this page.
+        <br><br><br>
+      </div>
+
+      <a href="#" id="back-initial" class="button gradient centre">Back</a>
+
+    </main>
+  </body>
+
+</html>

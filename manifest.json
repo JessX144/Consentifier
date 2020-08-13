@@ -1,0 +1,54 @@
+{
+  "manifest_version": 2,
+
+  "name": "Consentifier extension",
+  "description": "This extension helps you manage your data and services you've consented to via the consentifier app.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "images/icon-disabled.png",
+    "default_popup": "initial.html",
+    "default_title": "Consent here!"
+  },
+
+  "permissions": [
+    "activeTab",
+    "background",
+    "tabs",
+    "cookies",
+    "*://*/*",
+    "storage",
+    "http://*/",
+    "https://*/",
+    "https://scc-pactman.lancs.ac.uk/*",
+    "https://scc-pactman.lancs.ac.uk/api/*",
+    "http://localhost:8000/api/*",
+    "https://localhost:8000/*"
+  ],
+
+  "background" : {
+    "scripts": ["js/jquery-3.3.1.min.js", "js/consentifier-api.js", "js/background.js"],
+    "persistent": false
+  },
+
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["js/content-script.js"]
+  }],
+
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+U",
+        "windows": "Ctrl+Shift+U",
+        "mac": "Command+Shift+U",
+        "chromeos": "Ctrl+Shift+U",
+        "linux": "Ctrl+Shift+U"
+      }
+    }
+  },
+
+  //TODO:Content security will need to cover eventual production url
+  //"content_security_policy": "script-src 'self' http://localhost:5000; object-src 'self'"
+  "content_security_policy": "script-src 'self' https://scc-pactman.lancs.ac.uk; object-src 'self'"
+}

@@ -1,0 +1,46 @@
+<!-- page for users to provide age and location data -->
+<html>
+ <head>
+    <link rel="stylesheet" href="css/mystyle.css">
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/consentifier-api.js"></script>
+    <script type="text/javascript" src="js/submitData.js"></script>
+
+    <div class=" border">   
+      <img src="images/logo.svg" class="test"/>
+    </div>
+</head>
+
+<div id="options">
+  User: <p style="display:inline" id="user"></p>
+  <p></p>
+
+  Service: <p style="display:inline" id="service"></p>
+  <p>Before accessing our data, we ask that you contribute your data first:</p>
+
+  <form id="submitForm">
+    <!-- values in dropdown form stored are upper age bounds -->
+    Age: <select name="Age" id="Age">
+      <option value="18">Under 18</option>
+      <option value="25">18-25</option>
+      <option value="35">25-35</option>
+      <option value="50">35-50</option>
+      <option value="60">50+</option>
+    </select>
+    <br>
+
+    Location: <select name="Location" id="Location">
+      <option value="GBR">United Kingdom</option>
+      <option value="USA">United States</option>
+      <option value="DEU">Germany</option>
+      <option value="FRA">France</option>
+    </select>
+
+    <br><br>
+  </form>
+
+  <button id="submit">submit</button>
+
+</div>
+
+</html>
